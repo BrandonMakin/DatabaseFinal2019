@@ -1,0 +1,134 @@
+:root {
+  /* light mode */
+  --main-bg-color: #F5F5F5;
+  --accent-color: #A59EFF;
+  --section-bg-color: #FFF;
+  --section-font-color: #000;
+  --section-border: 1px solid var(--accent-color);
+  --section-shadow-color: lightgrey;
+
+  /* dark mode */
+  /* --main-bg-color: #222;
+  --accent-color: #C00;
+  --section-bg-color: #111;
+  --section-font-color: #FFF;
+  --section-border: 1px solid var(--accent-color);
+  --section-shadow-color: black; */
+}
+
+body {
+  position: relative;
+  max-width: 80%;
+  left: 10%;
+  background-color: var(--main-bg-color);
+  font-family: sans-serif;
+  color: var(--section-font-color);
+}
+
+section {
+  background-color: var(--section-bg-color);
+  border: var(--section-border);
+  padding: .8em;
+  padding-top: 0;
+  margin-bottom: 10px;
+  box-shadow: 0px 7px 3px -3px var(--section-shadow-color);
+}
+
+h1 {
+  font-size: 29px;
+  font-weight: bold;
+}
+
+h2 {
+  font-size: 21px;
+  font-weight: bold;
+}
+
+table, th, td {
+  padding: .8em;
+}
+
+table {
+  border-collapse: collapse;
+  border: var(--section-border);
+  width: 100%;
+}
+
+th {
+  border-right: var(--section-border);
+  border-bottom: 3px double var(--accent-color);
+}
+
+td {
+  border-right: var(--section-border);
+  border-bottom: var(--section-border);
+}
+
+ul {
+  padding: 0;
+}
+
+li {
+  list-style-type: none;
+  border-bottom: var(--section-border);
+}
+
+.search-bar {
+  background-color: var(--section-bg-color);
+  border: var(--section-border);
+  border-radius: 100px;
+  height: 1.5em;
+  padding-left: 30px;
+  width: 60%;
+}
+
+.vote {
+  border: 1px solid black;
+  border-radius: 100px;
+  padding: .5em;
+  text-align: center;
+  max-width: 2em;
+  position: block;
+  margin-left: auto;
+  margin-right: auto;
+  color: black;
+}
+
+.aye {
+  background-color: #C3FFED;
+}
+
+.no {
+  background-color: #EC8398;
+}
+
+.vote-section-container {
+  display: flex;
+  margin: -5px;
+}
+
+.vote-section {
+  width: 50%;
+  margin: 5px;
+}
+
+#search-icon {
+  position:absolute;
+  margin-left: 4px;
+}
+
+@media (max-width: 768px) {
+  body {
+    max-width: 100%;
+    left: 0;
+  }
+}
+@media (max-width: 600px) {
+  .vote-section-container {
+    margin: 0;
+  }
+
+  .vote-section {
+    margin: 0;
+  }
+}
