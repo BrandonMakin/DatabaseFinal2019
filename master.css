@@ -6,14 +6,17 @@
   --section-font-color: #000;
   --section-border: 1px solid var(--accent-color);
   --section-shadow-color: lightgrey;
+  --link-color: #362cb8;
 
   /* dark mode */
-  /* --main-bg-color: #222;
-  --accent-color: #C00;
-  --section-bg-color: #111;
-  --section-font-color: #FFF;
+  /* --main-bg-color: #000;
+  --accent-color: #362cb8;
+  --section-bg-color: #000;
+  --section-font-color: #DDD;
   --section-border: 1px solid var(--accent-color);
-  --section-shadow-color: black; */
+  --section-shadow-color: #000;
+  --link-color: #A59EFF; */
+
 }
 
 body {
@@ -21,26 +24,29 @@ body {
   max-width: 80%;
   left: 10%;
   background-color: var(--main-bg-color);
-  font-family: sans-serif;
+  font-family: verdana, sans-serif;
+  font-size: 16px;
   color: var(--section-font-color);
 }
 
 section {
   background-color: var(--section-bg-color);
   border: var(--section-border);
-  padding: .8em;
+  padding: 10pt;
   padding-top: 0;
   margin-bottom: 10px;
   box-shadow: 0px 7px 3px -3px var(--section-shadow-color);
 }
 
 h1 {
-  font-size: 29px;
+  font-family: "Times New Roman", Times, serif;
+  font-size: 30px;
   font-weight: bold;
 }
 
 h2 {
-  font-size: 21px;
+  font-family: "Times New Roman", Times, serif;
+  font-size: 24px;
   font-weight: bold;
 }
 
@@ -71,10 +77,21 @@ ul {
 li {
   list-style-type: none;
   border-bottom: var(--section-border);
+  padding: 1em;
+}
+
+a {
+  color: var(--link-color);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--accent-color);
 }
 
 .search-bar {
   background-color: var(--section-bg-color);
+  color: var(--section-font-color);
   border: var(--section-border);
   border-radius: 100px;
   height: 1.5em;
@@ -85,9 +102,9 @@ li {
 .vote {
   border: 1px solid black;
   border-radius: 100px;
-  padding: .5em;
+  padding: .25em;
   text-align: center;
-  max-width: 2em;
+  max-width: 4em;
   position: block;
   margin-left: auto;
   margin-right: auto;
@@ -95,11 +112,11 @@ li {
 }
 
 .aye {
-  background-color: #C3FFED;
+  background-color: #D6FFB2;
 }
 
 .no {
-  background-color: #EC8398;
+  background-color: var(--accent-color);
 }
 
 .vote-section-container {
@@ -110,11 +127,6 @@ li {
 .vote-section {
   width: 50%;
   margin: 5px;
-}
-
-.link:hover {
-  color: blue;
-  cursor: pointer;
 }
 
 #search-icon {
