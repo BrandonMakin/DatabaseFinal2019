@@ -37,8 +37,8 @@ votes.forEach(vote => {
   let row = voteTable.insertRow(-1);
   let lawName = row.insertCell(0);
   let lawVote = row.insertCell(1);
-  lawName.innerHTML = vote[0];
-  switch (vote[1])
+  lawName.innerHTML = `<a href="law.html?id=${vote[0]}">${vote[0]}: ${vote[1]}</a>`;
+  switch (vote[2])
   {
     case 0:
       lawVote.innerHTML = '<div class="vote aye">Aye</div>';

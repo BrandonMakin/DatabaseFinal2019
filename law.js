@@ -21,18 +21,18 @@ document.getElementById('law-date').innerHTML = data.law.getIntroductionDate(law
 // Populate the #sponsor-list element with the law's sponsors
 let sponsorList = document.getElementById('sponsor-list');
 let sponsors = data.law.getSponsors(lawId)
-util.populateList(sponsorList, sponsors)
+util.populateList(sponsorList, sponsors, "legislator.html")
 
 ///////////////////////////////////
 // SECTION - VOTE-SECTION FOR
 //
 // Populate the #sponsor-list element with the law's supporters
 let supporterList = document.getElementById('voters-for');
-util.populateList(supporterList, data.law.getVotesFor(lawId))
+util.populateList(supporterList, data.law.getVotesFor(lawId), "legislator.html")
 
 ///////////////////////////////////
 // SECTION - VOTE-SECTION AGAINST
 //
 // Populate the #sponsor-list element with the law's opposition
 let oppositionList = document.getElementById('voters-against');
-util.populateList(oppositionList, data.law.getVotesAgainst(lawId))
+util.populateList(oppositionList, data.law.getVotesAgainst(lawId), "legislator.html")

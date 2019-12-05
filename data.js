@@ -82,8 +82,8 @@ let data = {
     getVotes: function(id)
     {
       return [
-        ["H.R. 4803" + ": " + "Citizenship for Children of Military Members and Civil Servants Act", 0],
-        ["H.R. 4803" + ": " + "Citizenship for Children of Military Members and Civil Servants Act", 1]
+        ["H.R. 4803", "Citizenship for Children of Military Members and Civil Servants Act", 0],
+        ["H.R. 4804", "Other Citizenship for Children of Military Members and Civil Servants Act", 1]
       ]
     },
     getIdFromName: function(name)
