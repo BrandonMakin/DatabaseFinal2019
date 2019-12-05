@@ -1,36 +1,26 @@
-partyID = 0;
+partyId = 0;
 
 ///////////////////////////////////
 // TITLE
 //
-document.getElementsByTagName('title')[0].innerHTML = data.party.getName(partyID) + " (Party)"
+document.getElementsByTagName('title')[0].innerHTML = data.party.getName(partyId) + " (Party)"
 
 ///////////////////////////////////
 // SECTION - SUMMARY
 //
 // Display the party name
-document.getElementById('party-name').innerHTML = data.party.getName(partyID);
+document.getElementById('party-name').innerHTML = data.party.getName(partyId);
 
 ///////////////////////////////////
 // SECTION - HOUSE-MEMBERS
 //
 // List the representatives that are part of the given party
 let houseList = document.getElementById('house-member-list');
-populateList(houseList, data.party.getHouseMembers(partyID))
+util.populateList(houseList, data.party.getHouseMembers(partyId), "legislator.html")
 
 ///////////////////////////////////
 // SECTION - SENATE-MEMBERS
 //
 // List the senators that are part of the given party
 let senateList = document.getElementById('senate-member-list');
-populateList(senateList, data.party.getSenateMembers(partyID))
-
-///////////////////////////////////
-//
-// populateList
-// Takes an html element listElement, and fills it with list items containing strings from the array listItems
-//
-function populateList(listElement, listItems)
-{
-  listItems.forEach(item => listElement.innerHTML += '<li>' + item + '</li>')
-}
+util.populateList(senateList, data.party.getSenateMembers(partyId), "legislator.html")

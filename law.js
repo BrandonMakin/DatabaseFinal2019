@@ -1,48 +1,38 @@
-let lawID = "H.R. 4803";
+let lawId = "H.R. 4803";
 
 ///////////////////////////////////
 // TITLE
 //
-document.getElementsByTagName('title')[0].innerHTML = lawID + " (Law)"
+document.getElementsByTagName('title')[0].innerHTML = lawId + " (Law)"
 
 ///////////////////////////////////
 // SECTION - SUMMARY
 //
-// Display the law ID
-document.getElementById('law-id').innerHTML = lawID
+// Display the law Id
+document.getElementById('law-id').innerHTML = lawId
 // Display the law name
-document.getElementById('law-name').innerHTML = data.law.getName(lawID)
+document.getElementById('law-name').innerHTML = data.law.getName(lawId)
 // Display the date that the law was introduced
-document.getElementById('law-date').innerHTML = data.law.getIntroductionDate(lawID)
+document.getElementById('law-date').innerHTML = data.law.getIntroductionDate(lawId)
 
 ///////////////////////////////////
 // SECTION - SPONSORS
 //
 // Populate the #sponsor-list element with the law's sponsors
 let sponsorList = document.getElementById('sponsor-list');
-let sponsors = data.law.getSponsors(lawID)
-populateList(sponsorList, sponsors)
+let sponsors = data.law.getSponsors(lawId)
+util.populateList(sponsorList, sponsors)
 
 ///////////////////////////////////
 // SECTION - VOTE-SECTION FOR
 //
 // Populate the #sponsor-list element with the law's supporters
 let supporterList = document.getElementById('voters-for');
-populateList(supporterList, data.law.getVotesFor(lawID))
+util.populateList(supporterList, data.law.getVotesFor(lawId))
 
 ///////////////////////////////////
 // SECTION - VOTE-SECTION AGAINST
 //
 // Populate the #sponsor-list element with the law's opposition
 let oppositionList = document.getElementById('voters-against');
-populateList(oppositionList, data.law.getVotesAgainst(lawID))
-
-///////////////////////////////////
-//
-// populateList
-// Takes an html element listElement, and fills it with list items containing strings from the array listItems
-//
-function populateList(listElement, listItems)
-{
-  listItems.forEach(item => listElement.innerHTML += '<li>' + item + '</li>')
-}
+util.populateList(oppositionList, data.law.getVotesAgainst(lawId))

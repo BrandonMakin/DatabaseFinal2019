@@ -112,6 +112,11 @@ li {
   margin: 5px;
 }
 
+.link:hover {
+  color: blue;
+  cursor: pointer;
+}
+
 #search-icon {
   position:absolute;
   margin-left: 4px;
