@@ -34,6 +34,9 @@ populateList(oppositionList, data.law.getVotesAgainst(lawID))
 
 ///////////////////////////////////
 //
+// populateList
+// Takes an html element listElement, and fills it with list items containing strings from the array listItems
+//
 function populateList(listElement, listItems)
 {
   listItems.forEach(item => listElement.innerHTML += '<li>' + item + '</li>')

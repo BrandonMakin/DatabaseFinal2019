@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>(Legislator)</title>
+    <link rel="stylesheet" href="master.css">
+  </head>
+  <body>
+    <div class="search">
+      <img id="search-icon" src="img/search-24px.svg" alt="">
+      <input type="text" name="search-bar" class="search-bar" value="Search for legislators" onfocusin="this.value=''" onfocusout="this.value='Search for legislators'">
+    </div>
+    <h1>Legislator Profile</h1>
+    <section class="summary">
+      <h2 id="legislator-name"></h2>
+      <p> <span id="house"></span> <span id="role"></span></p>
+      <p><span id="party"></span> - <span id="constituency"></span></p>
+    </section>
+    <section class="sponsored-bills">
+      <h2>Sponsored Bills</h2>
+      <ul id="bill-list">
+      </ul>
+    </section>
+    <section class="voting-record">
+      <h2>Voting Record</h2>
+      <table id="vote-list">
+        <tr>
+          <th>Law</th>
+          <th>Vote</th>
+        </tr>
+      </table>
+    </section>
+
+    <script src="data.js" charset="utf-8"></script>
+    <script src="legislator.js" charset="utf-8"></script>
+  </body>
+</html>

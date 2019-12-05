@@ -8,25 +8,22 @@
   <body>
     <div class="search">
       <img id="search-icon" src="img/search-24px.svg" alt="">
-      <input type="text" name="search-bar" class="search-bar" value="Search for politicians" onfocusin="this.value=''" onfocusout="this.value='Search for politicians'">
+      <input type="text" name="search-bar" class="search-bar" value="Search for legislators" onfocusin="this.value=''" onfocusout="this.value='Search for legislators'">
     </div>
     <h1>Political Party Profile</h1>
     <section class="summary">
-      <h2>Democrat</h2>
+      <h2 id="party-name"></h2>
     </section>
     <section class="house-members">
       <h2>Current House Members</h2>
-      <ul>
-        <li>Dick Durbin</li>
-        <li>Chuck Schumer</li>
-      </ul>
+      <ul id="house-member-list"></ul>
     </section>
     <section class="senate-members">
       <h2>Current Senate Members</h2>
-      <ul>
-        <li>Dick Durbin</li>
-        <li>Chuck Schumer</li>
-      </ul>
+      <ul id="senate-member-list"></ul>
     </section>
+
+    <script src="data.js" charset="utf-8"></script>
+    <script src="party.js" charset="utf-8"></script>
   </body>
 </html>
