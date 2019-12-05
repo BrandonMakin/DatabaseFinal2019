@@ -1,6 +1,11 @@
 let lawID = "H.R. 4803";
 
 ///////////////////////////////////
+// TITLE
+//
+document.getElementsByTagName('title')[0].innerHTML = lawID + " (Law)"
+
+///////////////////////////////////
 // SECTION - SUMMARY
 //
 // Display the law ID

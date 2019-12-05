@@ -1,6 +1,11 @@
 legislatorID = 0;
 
 ///////////////////////////////////
+// TITLE
+//
+document.getElementsByTagName('title')[0].innerHTML = data.legislator.getName(legislatorID) + " (Legislator)";
+
+///////////////////////////////////
 // SECTION - SUMMARY
 //
 // Display the party name

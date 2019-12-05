@@ -1,6 +1,11 @@
 let billID = "H.R. 4803";
 
 ///////////////////////////////////
+// TITLE
+//
+document.getElementsByTagName('title')[0].innerHTML = billID + " (Bill)"
+
+///////////////////////////////////
 // SECTION - SUMMARY
 //
 // Display the bill ID

@@ -1,6 +1,11 @@
 partyID = 0;
 
 ///////////////////////////////////
+// TITLE
+//
+document.getElementsByTagName('title')[0].innerHTML = data.party.getName(partyID) + " (Party)"
+
+///////////////////////////////////
 // SECTION - SUMMARY
 //
 // Display the party name
