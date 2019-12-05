@@ -1,4 +1,4 @@
-partyId = 0;
+partyId = util.getIdOrRedirect();
 
 ///////////////////////////////////
 // TITLE

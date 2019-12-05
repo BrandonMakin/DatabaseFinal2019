@@ -1,4 +1,4 @@
-legislatorId = 0;
+legislatorId = util.getIdOrRedirect();
 
 ///////////////////////////////////
 // TITLE

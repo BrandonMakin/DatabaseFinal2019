@@ -98,6 +98,10 @@ a:hover {
   padding-left: 30px;
   width: 60%;
 }
+.search-bar.full {
+  height: 1.5em;
+  width: calc(100% - 32.5px);
+}
 
 .vote {
   border: 1px solid black;

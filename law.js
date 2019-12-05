@@ -1,4 +1,4 @@
-let lawId = "H.R. 4803";
+let lawId = util.getIdOrRedirect();
 
 ///////////////////////////////////
 // TITLE
