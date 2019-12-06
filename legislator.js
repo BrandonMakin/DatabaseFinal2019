@@ -1,3 +1,4 @@
+util.enableSearchBar();
 legislatorId = util.getIdOrRedirect();
 
 ///////////////////////////////////
@@ -25,7 +26,7 @@ document.getElementById('party').href = "party.html?id=" + data.legislator.getPa
 //
 // List the representatives that are part of the given party
 let billList = document.getElementById('bill-list');
-util.populateListWithIds(billList, data.legislator.getSponsoredBills(legislatorId), "bill.html")
+util.populateListIdsOnly(billList, data.legislator.getSponsoredBills(legislatorId), "bill.html")
 
 ///////////////////////////////////
 // SECTION - VOTING-RECORD

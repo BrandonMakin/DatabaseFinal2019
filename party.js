@@ -1,3 +1,4 @@
+util.enableSearchBar();
 partyId = util.getIdOrRedirect();
 
 ///////////////////////////////////

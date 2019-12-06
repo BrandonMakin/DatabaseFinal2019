@@ -20,75 +20,63 @@ let data = {
     getSponsors: function (id) {
       return [[0, "Dick Durbin"], [1, "Chuck Schumer"]];
     },
-    getIntroductionDate: function(id)
-    {
+    getIntroductionDate: function(id) {
       return "12/3/2019";
     },
     // returns [[legislator_0_id, legislator_0_name], [legislator_1_id, legislator_1_name], ...]
-    getVotesFor: function(id)
-    {
+    getVotesFor: function(id) {
       return [[0, "Dick Durbin"], [1, "Chuck Schumer"]];
     },
     // returns [[legislator_0_id, legislator_0_name], [legislator_1_id, legislator_1_name], ...]
-    getVotesAgainst: function(id)
-    {
+    getVotesAgainst: function(id) {
       return [[2, "Brandon"], [3, "Sam"]];
     },
   },
   party: {
-    getName: function(id)
-    {
+    getName: function(id) {
       return "Democrat";
     },
-    getHouseMembers: function(id)
-    {
+    getHouseMembers: function(id) {
       return [[0, "Dick Durbin"], [3, "Sam"]];
     },
-    getSenateMembers: function(id)
-    {
+    getSenateMembers: function(id) {
       return [[2, "Brandon"], [1, "Chuck Schumer"]];
     },
   },
   legislator: {
-    getName: function(id)
-    {
+    getName: function(id) {
       return "Dick Durban";
     },
-    getHouse: function(id)
-    {
+    getHouse: function(id) {
       return "Senate";
     },
-    getRole: function(id)
-    {
+    getRole: function(id) {
       return "Minority Whip";
     },
     //returns [party_id, party_name]
-    getParty: function(id)
-    {
+    getParty: function(id) {
       return [0, "Democrat"];
     },
-    getConstituency: function(id)
-    {
+    getConstituency: function(id) {
       return "Illinois";
     },
     // returns [[bill_0_id, bill_0_name], [bill_1_id, bill_1_name], ...]
-    getSponsoredBills: function(id)
-    {
+    getSponsoredBills: function(id) {
       return [
         ["H.R. 4803", "Citizenship for Children of Military Members and Civil Servants Act"],
         ["H.R. 4804", "Other Citizenship for Children of Military Members and Civil Servants Act"]
       ]
     },
-    getVotes: function(id)
-    {
+    // returns [[bill_0_id, bill_0_name], [bill_1_id, bill_1_name], ...]
+    getVotes: function(id) {
       return [
         ["H.R. 4803", "Citizenship for Children of Military Members and Civil Servants Act", 0],
         ["H.R. 4804", "Other Citizenship for Children of Military Members and Civil Servants Act", 1]
       ]
     },
-    getIdFromName: function(name)
-    {
-      return 0;
-    }
+    // returns [[legislator_0_id, legislator_0_name], [legislator_1_id, legislator_1_name], ...]
+    searchByName: function(name) {
+      return [[6, "Larry"], [5, "Mo"], [4, "Curly"]];
+    },
   },
 };

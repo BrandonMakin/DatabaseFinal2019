@@ -1,3 +1,4 @@
+util.enableSearchBar();
 let id = util.getIdOrRedirect();
 
 ///////////////////////////////////

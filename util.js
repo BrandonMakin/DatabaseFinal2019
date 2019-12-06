@@ -18,7 +18,7 @@ let util = {
   // and fills it with list items containing strings and ids from the array listItems
   // Each list item links to linkedPage with an id as a query
   //
-  populateListWithIds: function(listElement, listItems, linkedPage) {
+  populateListIdsOnly: function(listElement, listItems, linkedPage) {
     listItems.forEach(pair => listElement.innerHTML += `<li><a href="${linkedPage}?id=${pair[0]}">${pair[0]}: ${pair[1]}</a></li>`)
   },
   ///////////////////////////////////
@@ -29,4 +29,11 @@ let util = {
   populateList: function(listElement, listItems, linkedPage) {
     listItems.forEach(pair => listElement.innerHTML += `<li><a href="${linkedPage}?id=${pair[0]}">${pair[1]}</a></li>`)
   },
+  search: function(event) {
+    if (event.keyCode == 13) // 13 is the key code for "enter"
+      window.location = "search.html?search=" + event.target.value
+  },
+  enableSearchBar: function() {
+    document.getElementsByClassName('search-bar')[0].onkeydown = util.search;
+  }
 }

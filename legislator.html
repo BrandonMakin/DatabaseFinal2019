@@ -8,7 +8,7 @@
   <body>
     <div class="search">
       <img id="search-icon" src="img/search-24px.svg" alt="">
-      <input type="text" name="search-bar" class="search-bar" value="Search for legislators" onfocusin="this.value=''" onfocusout="this.value='Search for legislators'">
+      <input type="text" name="search-bar" class="search-bar" value="Search for legislators" onfocusin="this.value=''" onfocusout="if (this.value=='') {this.value='Search for legislators';}">
     </div>
     <h1>Legislator Profile</h1>
     <section class="summary">

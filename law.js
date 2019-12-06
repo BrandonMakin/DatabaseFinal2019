@@ -1,3 +1,4 @@
+util.enableSearchBar();
 let lawId = util.getIdOrRedirect();
 
 ///////////////////////////////////
