@@ -37,6 +37,12 @@ function search(event) {
 function populateSearch() {
   let resultsSection = document.getElementById('search-results');
   let listOfResults = data.legislator.searchByName(searchQuery);
+  // If there are no results, tell the user.
+  if (listOfResults.length == 0) {
+    resultsSection.innerHTML = "<em>No results found</em>";
+    return;
+  }
+  // Otherwise populate the list with the results.
   resultsSection.innerHTML = ""; // Clear out old results
   util.populateList(resultsSection, listOfResults, "legislator.html")
 }

@@ -29,11 +29,28 @@ let util = {
   populateList: function(listElement, listItems, linkedPage) {
     listItems.forEach(pair => listElement.innerHTML += `<li><a href="${linkedPage}?id=${pair[0]}">${pair[1]}</a></li>`)
   },
-  search: function(event) {
-    if (event.keyCode == 13) // 13 is the key code for "enter"
-      window.location = "search.html?search=" + event.target.value
-  },
   enableSearchBar: function() {
-    document.getElementsByClassName('search-bar')[0].onkeydown = util.search;
-  }
+    document.getElementsByClassName('search-bar')[0].onkeydown = (event) => {
+      if (event.keyCode == 13) // 13 is the key code for "enter"
+        window.location = "search.html?search=" + event.target.value
+    }
+  },
+  enableDeleteButton: function(name, deleteFunction) {
+    deleteButton = document.getElementsByClassName('delete')[0];
+    if (deleteButton == null) {
+      return;
+    }
+    deleteButton.onclick = () => {
+      var deleteIsConfirmed = confirm("Warning: The entire profile will for " + name + " be deleted.\nPress 'ok' to continue.");
+      if (deleteIsConfirmed)
+      {
+        if (deleteFunction() == true) { // on a successful deletion
+          alert("The entry for " + name + " was deleted successfully.");
+          window.location = "search.html"
+        } else { // on a failed deletion
+          alert("Error: The entry for " + name + " was deleted. Please try again.");
+        }
+      }
+    }
+  },
 }

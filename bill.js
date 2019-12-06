@@ -1,5 +1,5 @@
 util.enableSearchBar();
-let id = util.getIdOrRedirect();
+let id = util.getIdOrRedirect(); // bill id
 
 ///////////////////////////////////
 // TITLE
@@ -15,6 +15,8 @@ document.getElementById('bill-id').innerHTML = id
 document.getElementById('bill-name').innerHTML = data.bill.getName(id)
 // Display the date that the bill was introduced
 document.getElementById('bill-date').innerHTML = data.bill.getIntroductionDate(id)
+// Enable delete button
+util.enableDeleteButton(id, () => data.bill.delete(id));
 
 ///////////////////////////////////
 // SECTION - SPONSORS

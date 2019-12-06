@@ -7,9 +7,12 @@ let data = {
     getSponsors: function (id) {
       return [[0, "Dick Durbin"], [1, "Chuck Schumer"]];
     },
-    getIntroductionDate: function(id)
-    {
+    getIntroductionDate: function(id) {
       return "12/3/2019";
+    },
+    // deletes the bill with the given id. Returns whether the deletion was successful.
+    delete: function(id) {
+      return true;
     },
   },
   law: {
@@ -31,6 +34,10 @@ let data = {
     getVotesAgainst: function(id) {
       return [[2, "Brandon"], [3, "Sam"]];
     },
+    // deletes the law with the given id. Returns whether the deletion was successful.
+    delete: function(id) {
+      return true;
+    },
   },
   party: {
     getName: function(id) {
@@ -41,6 +48,10 @@ let data = {
     },
     getSenateMembers: function(id) {
       return [[2, "Brandon"], [1, "Chuck Schumer"]];
+    },
+    // deletes the party with the given id. Returns whether the deletion was successful.
+    delete: function(id) {
+      return true;
     },
   },
   legislator: {
@@ -77,6 +88,10 @@ let data = {
     // returns [[legislator_0_id, legislator_0_name], [legislator_1_id, legislator_1_name], ...]
     searchByName: function(name) {
       return [[6, "Larry"], [5, "Mo"], [4, "Curly"]];
+    },
+    // deletes the legislator with the given id. Returns whether the deletion was successful.
+    delete: function(id) {
+      return true;
     },
   },
 };
