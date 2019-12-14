@@ -157,6 +157,11 @@ let data = {
                            "WHERE PP.party_id = " + id + " AND UPPER(CH.house_name) = \"SENATE\";");
         return result;
       },
+      //returns a list of (party_id, party_name) pairs for all parties
+      getAll: function() {
+        result = sql.query("SELECT party_id, party_name FROM Political_Parties;")
+        return result;
+      }
       // deletes the party with the given id. Returns whether the deletion was successful.
       delete: function(id) {
         result = sql.query("DELETE FROM Political_Parties WHERE party_id = " + id + ";");
@@ -274,6 +279,13 @@ let data = {
         return result;
       },
     },
+
+    state: {
+      //returns a list of (state_id, state_name) pairs for all states
+      getAll: function() {
+        result = sql.query("SELECT state_id, state_name FROM States;");
+      }
+    }
   };
 
 let sql = {
