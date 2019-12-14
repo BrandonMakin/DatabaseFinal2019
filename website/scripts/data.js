@@ -86,7 +86,7 @@ let data = {
       return result;
     },
     getName: function (id) {
-      result = sql.query("SELECT law_name FROM Laws WHERE law_id = \"" + id + "\";");
+      result = sql.query("SELECT bill_name FROM Laws AS L JOIN Bills AS B ON B.bill_id = L.bill_id WHERE law_id = \"" + id + "\";");
       return result;
     },
     // returns [[legislator_0_id, legislator_0_name], [legislator_1_id, legislator_1_name], ...]
