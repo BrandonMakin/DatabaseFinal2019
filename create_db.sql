@@ -25,7 +25,6 @@ CREATE TABLE Legislators (
   first_name VARCHAR(20),
   middle_name VARCHAR(20),
   last_name VARCHAR(20),
-  date_of_birth DATE,
   first_day DATE,
   last_day DATE,
   cong_house_id INTEGER NOT NULL,
