@@ -1,17 +1,23 @@
 let data = {
   bill: {
     getName: function (id) {
+      //SELECT bill_name FROM Bills WHERE bill_id = "[id]";
       return "Citizenship for Children of Military Members and Civil Servants Act";
     },
     // returns [[legislator_0_id, legislator_0_name], [legislator_1_id, legislator_1_name], ...]
     getSponsors: function (id) {
+      //SELECT L.leg_id, L.leg_name FROM Legislators AS L
+      //  JOIN Sponsoring AS S ON L.leg_id = S.leg_id
+      //  WHERE S.bill_id = "[id]";
       return [[0, "Dick Durbin"], [1, "Chuck Schumer"]];
     },
     getIntroductionDate: function(id) {
+      //SELECT bill_intro_date FROM Bills WHERE bill_id = "[id]";
       return "12/3/2019";
     },
     // deletes the bill with the given id. Returns whether the deletion was successful.
     delete: function(id) {
+      //DELETE FROM Bills WHERE bill_id = "[id]";
       return true;
     },
   },
