@@ -84,7 +84,7 @@ let data = {
       }
 
       return result;
-    }
+    },
     getName: function (id) {
       result = sql.query("SELECT law_name FROM Laws WHERE law_id = \"" + id + "\";");
       return result;
@@ -164,25 +164,53 @@ let data = {
       },
     },
     legislator: {
-    //Inserts a new legislator into the Legislators table
-    //@param id - the legislator's id
-    //@param first - the legislator's first name
-    //@param middle - the legislator's middle name, "NULL" if unknown
-    //@param last - the legislator's last name
-    //@param dob - the legislator's date of birth
-    //@param house - the legislator's house of Congress id
-    //@param party - the legislator's political party id
-    //@param first_day - the legislator's first day in office
-    //@param last_day - the legislator's last day in office
-    //@param state - the legislator's state id
-    insert: function(id, first, middle, last, dob, house, party, first_day, last_day, state) {
-      result = sql.query("INSERT INTO Bills (leg_id, first_name, middle_name, last_name, " +
-                         " cong_house_id, first_day, last_day, date_of_birth, party_id, state_id) " +
-                         "VALUES (" + id + ", \"" + first + "\", \"" + middle + "\", \"" + last + "\", " +
-                         house + ", " + first_day + ", " + last_day + ", " + dob + ", " + party + ", \"" + state + "\");"
-      );
-      return result;
-    }
+      //Inserts a new legislator into the Legislators table
+      //@param id - the legislator's id
+      //@param first - the legislator's first name
+      //@param middle - the legislator's middle name, "NULL" if unknown
+      //@param last - the legislator's last name
+      //@param dob - the legislator's date of birth
+      //@param house - the legislator's house of Congress id
+      //@param party - the legislator's political party id
+      //@param first_day - the legislator's first day in office
+      //@param last_day - the legislator's last day in office
+      //@param state - the legislator's state id
+      insert: function(id, first, middle, last, dob, house, party, first_day, last_day, state) {
+        result = sql.query("INSERT INTO Legislators (leg_id, first_name, middle_name, last_name, " +
+                           " cong_house_id, first_day, last_day, date_of_birth, party_id, state_id) " +
+                           "VALUES (" + id + ", \"" + first + "\", \"" + middle + "\", \"" + last + "\", " +
+                           house + ", " + first_day + ", " + last_day + ", " + dob + ", " + party + ", \"" + state + "\");"
+        );
+        return result;
+      },
+      changeFName: function(name, id) {
+        result = sql.query("UPDATE Legislators SET first_name = \"" + name + "\" WHERE leg_id = " + id + ";");
+        return result;
+      },
+      changeMName: function(name, id) {
+        result = sql.query("UPDATE Legislators SET middle_name = \"" + name + "\" WHERE leg_id = " + id + ";");
+        return result;
+      },
+      changeLName: function(name, id) {
+        result = sql.query("UPDATE Legislators SET last_name = \"" + name + "\" WHERE leg_id = " + id + ";");
+        return result;
+      },
+      changeDOB: function(dob, leg_id) {
+        result = sql.query("UPDATE Legislators SET  date_of_birth = " + dob + " WHERE leg_id = " + id + ";");
+        return result;
+      },
+      changeHouse: function(house_id, leg_id) {
+        result = sql.query("UPDATE Legislators SET cong_house_id = " + house_id + " WHERE leg_id = " + id + ";");
+        return result;
+      },
+      changeParty: function(party_id, leg_id) {
+        result = sql.query("UPDATE Legislators SET party_id = " + party_id + " WHERE leg_id = " + id + ";");
+        return result;
+      },
+      changeState: function(state_id, leg_id) {
+        result = sql.query("UPDATE Legislators SET state = \"" + state_id + "\" WHERE leg_id = " + id + ";");
+        return result;
+      },
       //returns [first_name, middle_name, last_name]
       getName: function(id) {
         result = sql.query("SELECT first_name, middle_name, last_name FROM Legislators WHERE leg_id = " + id +";");
@@ -242,15 +270,15 @@ let data = {
       getId: function(name) {
         result = sql.query("SELECT house_id FROM Congressional_Houses WHERE UPPER(house_name) = UPPER(\"" + name +"\");");
         return result;
-      }
-    }
+      },
+    },
 
     vote: {
       getId: function(name) {
         result = sql.query("SELECT vote_id FROM Votes WHERE UPPER(vote_name) = UPPER(\"" + name +"\");");
         return result;
-      }
-    }
+      },
+    },
   };
 
 let sql = {
