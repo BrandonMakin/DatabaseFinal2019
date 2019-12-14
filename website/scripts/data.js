@@ -95,16 +95,26 @@ let data = {
   },
   party: {
     getName: function(id) {
+      //SELECT party_name FROM Political_Parties AS PP WHERE PP.party_id = [id];
       return "Democrat";
     },
     getHouseMembers: function(id) {
+      //SELECT L.leg_id, L.leg_name FROM Legislators AS L
+      //  JOIN Political_Parties AS PP ON PP.party_id = L.party_id
+      //  JOIN Congressional_Houses AS CH ON CH.house_id = L.cong_house_id
+      //  WHERE PP.party_id = [id] AND UPPER(CH.house_name) = "HOUSE";
       return [[0, "Dick Durbin"], [3, "Sam"]];
     },
     getSenateMembers: function(id) {
+      //SELECT L.leg_id, L.leg_name FROM Legislators AS L
+      //  JOIN Political_Parties AS PP ON PP.party_id = L.party_id
+      //  JOIN Congressional_Houses AS CH ON CH.house_id = L.cong_house_id
+      //  WHERE PP.party_id = [id] AND UPPER(CH.house_name) = "SENATE";
       return [[2, "Brandon"], [1, "Chuck Schumer"]];
     },
     // deletes the party with the given id. Returns whether the deletion was successful.
     delete: function(id) {
+      //DELETE FROM Political_Parties WHERE party_id = [id];
       return true;
     },
   },
