@@ -282,8 +282,9 @@ let data = {
 
     state: {
       //returns a list of (state_id, state_name) pairs for all states
-      getAll: function() {
-        result = sql.query("SELECT state_id, state_name FROM States;");
+      getAll: async function() {
+        result = await sql.query("SELECT state_id, state_name FROM States;");
+        return result;
       }
     }
   };
@@ -303,7 +304,7 @@ let sql = {
       body: (JSON.stringify(data)),
     });
     const json = await response.json();
-    return json;
+    return json.result;
   },
   //
   // isInitialized: boolean that holds whether initializeSQL has been completed
