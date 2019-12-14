@@ -5,7 +5,7 @@ GRANT ALL PRIVILEGES ON legislature.* TO 'leg';
 USE legislature;
 CREATE TABLE Bills (
   bill_id VARCHAR(50) PRIMARY KEY,
-  bill_name VARCHAR(50) NOT NULL,
+  bill_name VARCHAR(200) NOT NULL,
   bill_intro_date DATE NOT NULL
 );
 
