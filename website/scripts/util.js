@@ -10,7 +10,6 @@ let util = {
         return pair[1];
       }
     }
-    window.location = "search.html";
     return null;
   },
   ///////////////////////////////////
