@@ -29,6 +29,9 @@ let util = {
   populateList: function(listElement, listItems, linkedPage) {
     listItems.forEach(pair => listElement.innerHTML += `<li><a href="${linkedPage}?id=${pair[0]}">${pair[1]}</a></li>`)
   },
+  populateSelect: function(selectElement, listItems) {
+    listItems.forEach(pair => selectElement.innerHTML += `<option value="${listItems[0]}">${listItems[1]}</option>`)
+  },
   enableSearchBar: function() {
     document.getElementsByClassName('search-bar')[0].onkeydown = (event) => {
       if (event.keyCode == 13) // 13 is the key code for "enter"

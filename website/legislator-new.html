@@ -9,13 +9,15 @@
     <h1>Create A New Legislator Profile</h1>
     <section class="summary">
       <br>
-      <input type="text" id="legislator-name" value="Full Name" onfocusin="this.value=''" onfocusout="if (this.value=='') {this.value='Full Name';}"></input>
+      <input type="text" id="legislator-name" value="First Name" onfocusin="this.value=''" onfocusout="if (this.value=='') {this.value='First Name';}"></input>
+      <input type="text" id="legislator-name" value="Middle Name" onfocusin="this.value=''" onfocusout="if (this.value=='') {this.value='Middle Name';}"></input>
+      <input type="text" id="legislator-name" value="Last Name" onfocusin="this.value=''" onfocusout="if (this.value=='') {this.value='Last Name';}"></input>
       <br>
       <p>
         Congressional House
         <select id="houses" name="houses">
-         <option value="0">Senate</option>
-         <option value="1">House of Representatives</option>
+          <option value="0">House of Representatives</option>
+          <option value="1">Senate</option>
         </select>
       </p>
       <p>
@@ -28,8 +30,6 @@
       <p>
         Home State
         <select id="state" name="state">
-         <option value="3">California</option>
-         <option value="16">New York</option>
         </select>
       </p>
     </section>

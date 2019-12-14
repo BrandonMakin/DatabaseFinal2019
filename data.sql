@@ -89,3 +89,7 @@ INSERT INTO Laws VALUES
 ('124', 'H.R. 722', '2019-16-12', '2019-16-12'),
 ('123', 'H.R. 4229', '2019-16-12', '2019-16-12' ),
 ('10', 'H.R. 2726', '2019-16-12', '2019-16-12');
+
+DELETE FROM Legislators;
+INSERT INTO Legislators VALUES
+(0, 'Dick', 'j', 'Durban', '2018-10-2', '2019-16-12', 0, 0, '8');

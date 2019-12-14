@@ -8,8 +8,15 @@
 // document.getElementById('role').innerHTML = data.legislator.getRole(id);
 // // Display their current house of congress
 // document.getElementById('house').innerHTML = data.legislator.getHouse(id);
-// // Display their constituency
-// document.getElementById('constituency').innerHTML = data.legislator.getConstituency(id);
+
+// Display their constituency
+(async () => {
+  let states = await data.state.getAll();
+  let statesElement = document.getElementById('state');
+  console.log(states);
+    states.forEach(state => statesElement.innerHTML += `<option value="${state.state_id}">${state.state_name}</option>`)
+})()
+
 // // Display the party name and add a link to the party page
 // document.getElementById('party').innerHTML = data.legislator.getParty(id)[1];
 // document.getElementById('party').href = "party.html?id=" + data.legislator.getParty(id)[0];
