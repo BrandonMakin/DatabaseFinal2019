@@ -44,14 +44,14 @@ let data = {
       result = sql.query("SELECT L.leg_id, L.leg_name FROM Legislators AS L " +
                          "JOIN Voting AS Vg ON L.leg_id = Vg.leg_id " +
                          "JOIN Votes AS Vs ON Vs.vote_id = Vg.vote_id " +
-                         "WHERE Vg.bill_id = \"" + id + "\" AND UPPER(Vs.vote_name) = \"YES\";";
+                         "WHERE Vg.bill_id = \"" + id + "\" AND UPPER(Vs.vote_name) = \"YES\";");
       return result;
     },
     getVotesAgainst: function(id) {
       result = sql.query("SELECT L.leg_id, L.leg_name FROM Legislators AS L " +
                          "JOIN Voting AS Vg ON L.leg_id = Vg.leg_id " +
                          "JOIN Votes AS Vs ON Vs.vote_id = Vg.vote_id " +
-                         "WHERE Vg.bill_id = \"" + id + "\" AND UPPER(Vs.vote_name) = \"NO\";";
+                         "WHERE Vg.bill_id = \"" + id + "\" AND UPPER(Vs.vote_name) = \"NO\";");
       return result;
     },
     // deletes the bill with the given id. Returns whether the deletion was successful.
@@ -138,7 +138,7 @@ let data = {
                          "VALUES (" + id + ", \"" + name + "\");"
       );
       return result;
-    }
+    },
     getName: function(id) {
       result = sql.query("SELECT party_name FROM Political_Parties AS PP WHERE PP.party_id = " + id + ";");
       return result;
@@ -161,7 +161,7 @@ let data = {
       getAll: function() {
         result = sql.query("SELECT party_id, party_name FROM Political_Parties;")
         return result;
-      }
+      },
       // deletes the party with the given id. Returns whether the deletion was successful.
       delete: function(id) {
         result = sql.query("DELETE FROM Political_Parties WHERE party_id = " + id + ";");
