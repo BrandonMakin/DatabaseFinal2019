@@ -16,13 +16,6 @@
 // // Enable delete button
 // util.enableDeleteButton(data.legislator.getName(id), () => data.legislator.delete(id));
 
-(async () => {
-  let response = await data.sql("USE legislature");
-  console.log(response);
-  response = await data.sql("select * from Bills");
-  console.log(response);
-})();
-
 function submit()
 {
   let name = document.getElementById('legislator-name').value;

@@ -1,17 +1,4 @@
 let data = {
-  sql: async function (_query) {
-    let data = {query: _query}
-    console.log(JSON.stringify(data))
-    const response = await fetch('http://localhost:1337/hello', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: (JSON.stringify(data)),
-    });
-    const json = await response.json();
-    return json;
-  },
   bill: {
     getName: function (id) {
       //SELECT bill_name FROM Bills WHERE bill_id = "[id]";
@@ -114,3 +101,39 @@ let data = {
     },
   },
 };
+
+let sql = {
+  //
+  // query: function to call sql queries from javascript
+  //
+  query: async function (_query) {
+    let data = {query: _query}
+    console.log(JSON.stringify(data))
+    const response = await fetch('http://localhost:8000/hello', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: (JSON.stringify(data)),
+    });
+    const json = await response.json();
+    return json;
+  },
+  //
+  // isInitialized: boolean that holds whether initializeSQL has been completed
+  //
+  isInitialized: false,
+  //
+  // initialize: function for all initial setup to sql.
+  //
+  initialize: function() {
+    if (sql.isInitialized)
+      return;
+
+    sql.query("USE legislature");
+
+    isInitialized = true;
+  },
+}
+
+sql.initialize()
