@@ -83,7 +83,7 @@ INSERT INTO Bills values
 ("S. 1790", "National Defense Authorization Act for Fiscal Year", "2019-16-12");
 
 DELETE FROM Laws;
-INSERT INTO Laws VALUES
+INSERT INTO Laws (law_id, bill_id, law_intro_date, law_sign_date) VALUES
 ("32", "H.R. 3", "2019-9-12", "2019-9-12"),
 ("51", "H.R. 5213", "2019-9-12", "2019-9-12"),
 ("124", "H.R. 722", "2019-16-12", "2019-16-12"),
@@ -91,5 +91,5 @@ INSERT INTO Laws VALUES
 ("10", "H.R. 2726", "2019-16-12", "2019-16-12");
 
 DELETE FROM Legislators;
-INSERT INTO Legislators VALUES
+INSERT INTO Legislators (leg_id, first_name, middle_name, last_name, first_day, last_day, cong_house_id, party_id, state_id) VALUES
 (0, "Dick", "j", "Durban", "2018-10-2", "2019-16-12", 0, 0, "8");
