@@ -89,9 +89,9 @@ let data = {
       result = sql.query("SELECT bill_name FROM Laws AS L JOIN Bills AS B ON B.bill_id = L.bill_id WHERE law_id = \"" + id + "\";");
       return result;
     },
-    // returns [[legislator_0_id, legislator_0_name], [legislator_1_id, legislator_1_name], ...]
+    // returns [[legislator_0_id, l0_first, l0_middle, l0_last], [legislator_1_id, l1_first, l1_middle, l1_last], ...]
     getSponsors: function (id) {
-      result = sql.query("SELECT Le.leg_id, Le.leg_name FROM Legislators AS Le " +
+      result = sql.query("SELECT Le.leg_id, Le.first_name, Le.middle_name Le.last_name FROM Legislators AS Le " +
                          "JOIN Sponsoring AS S ON Le.leg_id = S.leg_id " +
                          "JOIN Laws AS La ON S.bill_id = La.bill_id " +
                          "WHERE La.law_id = \"" + id + "\";");
@@ -107,7 +107,7 @@ let data = {
     },
     // returns [[legislator_0_id, legislator_0_name], [legislator_1_id, legislator_1_name], ...]
     getVotesFor: function(id) {
-      result = sql.query("SELECT Le.leg_id, Le.leg_name FROM Legislators AS Le " +
+      result = sql.query("SELECT Le.leg_id, Le.first_name, Le.middle_name Le.last_name FROM Legislators AS Le " +
                          "JOIN Voting AS Vg ON Le.leg_id = Vg.leg_id " +
                          "JOIN Votes AS Vs ON Vs.vote_id = Vg.vote_id " +
                          "JOIN Laws AS La ON Vg.bill_id = La.bill_id " +
@@ -116,7 +116,7 @@ let data = {
     },
     // returns [[legislator_0_id, legislator_0_name], [legislator_1_id, legislator_1_name], ...]
     getVotesAgainst: function(id) {
-      result = sql.query("SELECT Le.leg_id, Le.leg_name FROM Legislators AS Le " +
+      result = sql.query("SELECT Le.leg_id, Le.first_name, Le.middle_name Le.last_name FROM Legislators AS Le " +
                          "JOIN Voting AS Vg ON Le.leg_id = Vg.leg_id " +
                          "JOIN Votes AS Vs ON Vs.vote_id = Vg.vote_id " +
                          "JOIN Laws AS La ON Vg.bill_id = La.bill_id " +
