@@ -29,15 +29,9 @@ let data = {
       result = sql.query("SELECT bill_name FROM Bills WHERE bill_id = \""+ id + "\";");
       return "Citizenship for Children of Military Members and Civil Servants Act";
     },
-<<<<<<< HEAD
     // returns [[legislator_0_id, l0_first, l0_middle, l0_last], [legislator_1_id, l1_first, l1_middle, l1_last], ...]
     getSponsors: function (id) {
       result = sql.query("SELECT L.leg_id, L.first_name, L.middle_name, L.last_name FROM Legislators AS L " +
-=======
-    // returns [[legislator_0_id, legislator_0_name], [legislator_1_id, legislator_1_name], ...]
-    getSponsors: async function (id) {
-      result = await sql.query("SELECT L.leg_id, L.leg_name FROM Legislators AS L " +
->>>>>>> f3f391b1473c775c9dad1c344ef40c6efe29d6e6
                          "JOIN Sponsoring AS S ON L.leg_id = S.leg_id " +
                          "WHERE S.bill_id = \"" + id + "\";");
       return result;
@@ -46,25 +40,15 @@ let data = {
       result = await sql.query("SELECT bill_intro_date FROM Bills WHERE bill_id = \"" + id + "\";");
       return result;
     },
-<<<<<<< HEAD
     getVotesFor: function(id) {
       result = sql.query("SELECT L.leg_id, L.first_name, L.middle_name, L.last_name FROM Legislators AS L " +
-=======
-    getVotesFor: async function(id) {
-      result = sql.query("SELECT L.leg_id, L.leg_name FROM Legislators AS L " +
->>>>>>> f3f391b1473c775c9dad1c344ef40c6efe29d6e6
                          "JOIN Voting AS Vg ON L.leg_id = Vg.leg_id " +
                          "JOIN Votes AS Vs ON Vs.vote_id = Vg.vote_id " +
                          "WHERE Vg.bill_id = \"" + id + "\" AND UPPER(Vs.vote_name) = \"YES\";");
       return result;
     },
-<<<<<<< HEAD
     getVotesAgainst: function(id) {
       result = sql.query("SELECT L.leg_id, L.first_name, L.middle_name, L.last_name FROM Legislators AS L " +
-=======
-    getVotesAgainst: async function(id) {
-      result = sql.query("SELECT L.leg_id, L.leg_name FROM Legislators AS L " +
->>>>>>> f3f391b1473c775c9dad1c344ef40c6efe29d6e6
                          "JOIN Voting AS Vg ON L.leg_id = Vg.leg_id " +
                          "JOIN Votes AS Vs ON Vs.vote_id = Vg.vote_id " +
                          "WHERE Vg.bill_id = \"" + id + "\" AND UPPER(Vs.vote_name) = \"NO\";");
@@ -159,25 +143,15 @@ let data = {
       result = sql.query("SELECT party_name FROM Political_Parties AS PP WHERE PP.party_id = " + id + ";");
       return result;
     },
-<<<<<<< HEAD
     getHouseMembers: function(id) {
       result = sql.query("SELECT L.leg_id, L.first_name, L.middle_name, L.last_name FROM Legislators AS L " +
-=======
-    getHouseMembers: async function(id) {
-      result = sql.query("SELECT L.leg_id, L.leg_name FROM Legislators AS L " +
->>>>>>> f3f391b1473c775c9dad1c344ef40c6efe29d6e6
                          "JOIN Political_Parties AS PP ON PP.party_id = L.party_id " +
                          "JOIN Congressional_Houses AS CH ON CH.house_id = L.cong_house_id " +
                          "WHERE PP.party_id = " + id + " AND UPPER(CH.house_name) = \"HOUSE\";");
       return result;
     },
-<<<<<<< HEAD
       getSenateMembers: function(id) {
         result = sql.query("SELECT L.leg_id, L.first_name, L.middle_name, L.last_name FROM Legislators AS L " +
-=======
-      getSenateMembers: async function(id) {
-        result = sql.query("SELECT L.leg_id, L.leg_name FROM Legislators AS L " +
->>>>>>> f3f391b1473c775c9dad1c344ef40c6efe29d6e6
                            "JOIN Political_Parties AS PP ON PP.party_id = L.party_id " +
                            "JOIN Congressional_Houses AS CH ON CH.house_id = L.cong_house_id " +
                            "WHERE PP.party_id = " + id + " AND UPPER(CH.house_name) = \"SENATE\";");
