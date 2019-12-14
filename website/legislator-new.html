@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>(Legislator)</title>
+    <link rel="stylesheet" href="css/master.css">
+  </head>
+  <body>
+    <h1>Create A New Legislator Profile</h1>
+    <section class="summary">
+      <br>
+      <input type="text" id="legislator-name" value="Full Name" onfocusin="this.value=''" onfocusout="if (this.value=='') {this.value='Full Name';}"></input>
+      <br>
+      <p>
+        Congressional House
+        <select id="houses" name="houses">
+         <option value="0">Senate</option>
+         <option value="1">House of Representatives</option>
+        </select>
+      </p>
+      <p>
+        Political Party
+        <select id="party" name="party">
+         <option value="0">Democrat</option>
+         <option value="1">Republican</option>
+        </select>
+      </p>
+      <p>
+        Home State
+        <select id="state" name="state">
+         <option value="3">California</option>
+         <option value="16">New York</option>
+        </select>
+      </p>
+    </section>
+    <section class="sponsored-bills">
+      <h2>Sponsored Bills</h2>
+      <button name="add-bill">Add A Bill</button>
+      <ul id="bill-list">
+        <li>
+          <select name="bill">
+            <option value="H.R. 4803">Bill 1</option>
+            <option value="H.R. 4804">Bill 2</option>
+          </select>
+        </li>
+        <li>
+          <select name="bill">
+            <option value="H.R. 4803">Law 1</option>
+            <option value="H.R. 4804">Law 2</option>
+          </select>
+        </li>
+      </ul>
+    </section>
+    <section class="voting-record">
+      <h2>Voting Record</h2>
+      <button name="add-law">Add A Law</button>
+      <table id="vote-list">
+        <br><br>
+        <tr>
+          <th>Law</th>
+          <th>Vote</th>
+        </tr>
+        <tr>
+          <td>
+            <select name="bill">
+              <option value="1">Bill 1</option>
+              <option value="2">Bill 2</option>
+            </select>
+          </td>
+          <td>
+              <select name="vote">
+                <option value="yes">Yes</option>
+                <option value="no">No</option>
+              </select>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <select name="bill">
+              <option value="1">Bill 1</option>
+              <option value="2">Bill 2</option>
+            </select>
+          </td>
+          <td>
+              <select name="vote">
+                <option value="yes">Yes</option>
+                <option value="no">No</option>
+              </select>
+          </td>
+        </tr>
+      </table>
+    </section>
+    <section>
+      <br>
+      <button class="submit" name="submit" onclick="submit()">Submit Entry</button>
+      <button class="cancel" name="cancel">Cancel</button>
+    </section>
+
+    <script src="scripts/util.js" charset="utf-8"></script>
+    <script src="scripts/data.js" charset="utf-8"></script>
+    <script src="scripts/legislator-new.js" charset="utf-8"></script>
+  </body>
+</html>
