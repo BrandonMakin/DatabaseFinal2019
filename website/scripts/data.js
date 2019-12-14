@@ -237,6 +237,20 @@ let data = {
         return result;
       },
     },
+
+    house: {
+      getId: function(name) {
+        result = sql.query("SELECT house_id FROM Congressional_Houses WHERE UPPER(house_name) = UPPER(\"" + name +"\");");
+        return result;
+      }
+    }
+
+    vote: {
+      getId: function(name) {
+        result = sql.query("SELECT vote_id FROM Votes WHERE UPPER(vote_name) = UPPER(\"" + name +"\");");
+        return result;
+      }
+    }
   };
 
 let sql = {
