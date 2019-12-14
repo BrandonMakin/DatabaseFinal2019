@@ -29,9 +29,9 @@ let data = {
       result = sql.query("SELECT bill_name FROM Bills WHERE bill_id = \""+ id + "\";");
       return "Citizenship for Children of Military Members and Civil Servants Act";
     },
-    // returns [[legislator_0_id, legislator_0_name], [legislator_1_id, legislator_1_name], ...]
+    // returns [[legislator_0_id, l0_first, l0_middle, l0_last], [legislator_1_id, l1_first, l1_middle, l1_last], ...]
     getSponsors: function (id) {
-      result = sql.query("SELECT L.leg_id, L.leg_name FROM Legislators AS L " +
+      result = sql.query("SELECT L.leg_id, L.first_name, L.middle_name, L.last_name FROM Legislators AS L " +
                          "JOIN Sponsoring AS S ON L.leg_id = S.leg_id " +
                          "WHERE S.bill_id = \"" + id + "\";");
       return result;
@@ -41,14 +41,14 @@ let data = {
       return result;
     },
     getVotesFor: function(id) {
-      result = sql.query("SELECT L.leg_id, L.leg_name FROM Legislators AS L " +
+      result = sql.query("SELECT L.leg_id, L.first_name, L.middle_name, L.last_name FROM Legislators AS L " +
                          "JOIN Voting AS Vg ON L.leg_id = Vg.leg_id " +
                          "JOIN Votes AS Vs ON Vs.vote_id = Vg.vote_id " +
                          "WHERE Vg.bill_id = \"" + id + "\" AND UPPER(Vs.vote_name) = \"YES\";");
       return result;
     },
     getVotesAgainst: function(id) {
-      result = sql.query("SELECT L.leg_id, L.leg_name FROM Legislators AS L " +
+      result = sql.query("SELECT L.leg_id, L.first_name, L.middle_name, L.last_name FROM Legislators AS L " +
                          "JOIN Voting AS Vg ON L.leg_id = Vg.leg_id " +
                          "JOIN Votes AS Vs ON Vs.vote_id = Vg.vote_id " +
                          "WHERE Vg.bill_id = \"" + id + "\" AND UPPER(Vs.vote_name) = \"NO\";");
@@ -144,14 +144,14 @@ let data = {
       return result;
     },
     getHouseMembers: function(id) {
-      result = sql.query("SELECT L.leg_id, L.leg_name FROM Legislators AS L " +
+      result = sql.query("SELECT L.leg_id, L.first_name, L.middle_name, L.last_name FROM Legislators AS L " +
                          "JOIN Political_Parties AS PP ON PP.party_id = L.party_id " +
                          "JOIN Congressional_Houses AS CH ON CH.house_id = L.cong_house_id " +
                          "WHERE PP.party_id = " + id + " AND UPPER(CH.house_name) = \"HOUSE\";");
       return result;
     },
       getSenateMembers: function(id) {
-        result = sql.query("SELECT L.leg_id, L.leg_name FROM Legislators AS L " +
+        result = sql.query("SELECT L.leg_id, L.first_name, L.middle_name, L.last_name FROM Legislators AS L " +
                            "JOIN Political_Parties AS PP ON PP.party_id = L.party_id " +
                            "JOIN Congressional_Houses AS CH ON CH.house_id = L.cong_house_id " +
                            "WHERE PP.party_id = " + id + " AND UPPER(CH.house_name) = \"SENATE\";");
